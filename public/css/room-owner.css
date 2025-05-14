@@ -1,0 +1,285 @@
+/* CSS cho chức năng chủ phòng */
+
+/* Icon cho chủ phòng */
+.crown-icon {
+    color: gold;
+    margin-right: 5px;
+    text-shadow: 0 0 3px black;
+  }
+  
+  /* Style cho người chơi là chủ phòng */
+  .room-owner {
+    background-color: rgba(255, 215, 0, 0.1) !important;
+  }
+  
+  /* Menu tùy chọn cho người chơi */
+  .player-options-menu {
+    position: absolute;
+    background-color: #333;
+    border: 1px solid #555;
+    border-radius: 4px;
+    padding: 5px 0;
+    min-width: 150px;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .option-item {
+    padding: 8px 12px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .option-item:hover {
+    background-color: #444;
+  }
+  
+  .kick-option {
+    color: #ff6b6b;
+  }
+  
+  .transfer-option {
+    color: #ffd700;
+  }
+  
+  /* Popup cho kick và chuyển quyền */
+  .kick-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+  }
+  
+  .kick-popup-content {
+    background-color: #333;
+    border-radius: 8px;
+    width: 350px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    color: white;
+  }
+  
+  .kick-popup-content h3 {
+    margin-top: 0;
+    color: #ddd;
+    border-bottom: 1px solid #555;
+    padding-bottom: 10px;
+  }
+  
+  .kick-popup-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .kick-popup-buttons button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+  }
+  
+  #confirm-kick, #confirm-transfer {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  #confirm-kick:hover, #confirm-transfer:hover {
+    background-color: #c0392b;
+  }
+  
+  #cancel-kick, #cancel-transfer {
+    background-color: #7f8c8d;
+    color: white;
+  }
+  
+  #cancel-kick:hover, #cancel-transfer:hover {
+    background-color: #666;
+  }
+  
+  /* Nút quản lý phòng */
+  .room-owner-control {
+    position: absolute;
+    top: 10px;
+    right: 210px;
+    background-color: rgba(255, 215, 0, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 215, 0, 0.5);
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    z-index: 100;
+  }
+  
+  .room-owner-control:hover {
+    background-color: rgba(255, 215, 0, 0.3);
+  }
+  
+  .room-owner-control i {
+    margin-right: 5px;
+    color: gold;
+  }
+  
+  /* Bảng quản lý phòng */
+  .room-management-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+  }
+  
+  .room-management-panel .panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #555;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .room-management-panel .panel-header h3 {
+    margin: 0;
+    color: gold;
+  }
+  
+  .room-management-panel .panel-header button {
+    background: none;
+    border: none;
+    color: #ddd;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  .room-management-panel .panel-header button:hover {
+    color: white;
+  }
+  
+  .room-management-panel .panel-content {
+    background-color: #333;
+    border-radius: 8px;
+    width: 500px;
+    max-height: 80vh;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    color: white;
+    overflow-y: auto;
+  }
+  
+  .room-management-panel h4 {
+    color: #ddd;
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+  }
+  
+  .management-player-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .management-player-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #444;
+  }
+  
+  .management-player-item:last-child {
+    border-bottom: none;
+  }
+  
+  .management-player-item .player-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .player-avatar-small {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    margin-right: 10px;
+    border: 1px solid #555;
+  }
+  
+  .management-player-item .player-actions {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .management-player-item button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+  }
+  
+  .kick-player-btn {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  .kick-player-btn:hover {
+    background-color: #c0392b;
+  }
+  
+  .transfer-owner-btn {
+    background-color: #f1c40f;
+    color: #333;
+  }
+  
+  .transfer-owner-btn:hover {
+    background-color: #f39c12;
+  }
+  
+  .no-players {
+    padding: 15px;
+    text-align: center;
+    color: #aaa;
+    font-style: italic;
+  }
+  
+  /* Chỉ định vị của nút quản lý phòng trên các màn hình nhỏ */
+  @media all and (max-width: 768px) {
+    .room-owner-control {
+      top: 50px;
+      right: 10px;
+    }
+  }
+  
+  /* Thu nhỏ bảng quản lý phòng trên thiết bị di động */
+  @media all and (max-width: 576px) {
+    .room-management-panel .panel-content {
+      width: 90%;
+      max-width: 400px;
+    }
+    
+    .management-player-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .management-player-item .player-actions {
+      margin-top: 10px;
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
