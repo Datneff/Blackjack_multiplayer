@@ -2,60 +2,63 @@
 
 ![Game Screenshot](https://i.ibb.co/S3vjPCX/blackjack-background.jpg)
 
-## Description
-[Blackjack-Game-Multiplayer](https://blackjack.carlssonk.com/) is a free online multiplayer casino game. It's an online version of the traditional blackjack played at real casinos. You can choose to play alone or play in a private room with your friends. The goal of the game is to beat the dealer and win as much money as possible.
+## Giới thiệu
+Blackjack-Game-Multiplayer là một trò chơi casino trực tuyến miễn phí cho nhiều người chơi. Đây là phiên bản trực tuyến của trò blackjack truyền thống thường thấy tại các sòng bạc thật. Bạn có thể chơi một mình hoặc tạo phòng riêng để chơi cùng bạn bè. Mục tiêu của trò chơi là đánh bại nhà cái và kiếm được càng nhiều tiền càng tốt.
 
-## Installation
-If you want to download and use this project locally:
-1. First clone the project to your prefered text editor
-2. Go to your terminal and install all the modules with **npm install**
-3. When all the modules have been installed, start the server by typing **node index.js** in the terminal
-4. Open Google and type in **localhost:8080**
+## Cài đặt
+Clone dự án về trình soạn thảo mã bạn yêu thích
+Mở terminal và cài đặt các thư viện cần thiết bằng lệnh npm install
+Khi các thư viện đã được cài đặt xong, khởi động máy chủ bằng cách gõ node index.js trong terminal
+Mở trình duyệt và truy cập localhost:8080
 
-## Technologies
+## Công nghệ sử dụng
 * JavaScript
 * SCSS
 * Node.js
 * Express
 * WebSocket
 
-## How To Play
+## Cách chơi
 
-### Object Of The Game
+### Mục tiêu trò chơi
 
-Each participant attempts to beat the dealer by getting a count as close to 21 as possible, without going above 21.
+Mỗi người chơi cố gắng đánh bại nhà cái bằng cách có tổng điểm càng gần 21 càng tốt, nhưng không vượt quá 21.
 
-### Card Values/Scoring
+### Giá trị lá bài / Tính điểm
 
-Usually it's up to each individual player if an ace is worth 1 or 11. However in this game if a player stands with an ace, it will always count the ace as 11 if your total sum doesn't exceed 21. Face cards are 10 and any other card is its original value.
+Thông thường người chơi sẽ quyết định lá A có giá trị là 1 hay 11. Tuy nhiên trong trò chơi này, nếu người chơi chọn "dừng" và có lá A, nó sẽ được tính là 11 nếu tổng điểm không vượt quá 21.
+Các lá hình (J, Q, K) có giá trị là 10, các lá còn lại giữ nguyên giá trị.
 
-### Betting
+### Cược
 
-Before the dealer begins dealing out cards, each player must place a bet.
+Trước khi nhà cái chia bài, mỗi người chơi cần đặt cược.
 
-### The Deal
+### Chia bài
 
-The round starts with the dealer giving out 2 cards to each player. He also gives himself one card facing up & one card facing down.
+Vòng chơi bắt đầu khi nhà cái chia 2 lá bài cho mỗi người chơi, và chia cho mình 1 lá ngửa + 1 lá úp.
 
-### Naturals
+### Tự nhiên (Blackjack)
 
-If a player gets a count to 21 on the first 2 cards, the player gets Blackjack. Blakjack pays out 3:2 directly to the player and he will wait until next round to play again.
+Nếu người chơi có tổng điểm là 21 ngay từ 2 lá đầu tiên, đó là Blackjack.
+Người chơi sẽ được trả thưởng theo tỉ lệ 3:2 và chờ tới vòng tiếp theo
 
-### The Play
+### Lượt chơi của người chơi
 
-Now its time for the first player to make his move. The player can Hit, Stand, Or Double Down.
+Người chơi có thể chọn:
 
-Hit = Ask for another card in attempt to get closer to 21.
-Stand = Don't ask for any cards, moves on to the next player
-Double Down = Double the bet and ask for another card. (You can only double down once per round & can't draw any more cards after double'd down).
+Rút bài (Hit): Rút thêm 1 lá để tăng tổng điểm gần 21 hơn
+Dừng (Stand): Không rút thêm, chuyển lượt cho người chơi khác
+Gấp đôi (Double Down): Gấp đôi tiền cược và rút 1 lá bài duy nhất. (Chỉ được dùng 1 lần mỗi vòng và không được rút thêm sau đó)
 
-### The Dealer's Play
+### Lượt chơi của nhà cái
 
-Dealer starts with flipping his card facing down. Dealer will draw until he reaches 17, when dealer's sum is 17 or above, he stops taking cards.
+Nhà cái sẽ lật lá bài úp của mình. Sau đó:
+Rút bài cho đến khi tổng điểm đạt ít nhất 17
+Khi đạt 17 trở lên, nhà cái sẽ dừng
 
-### Payout
+### Trả thưởng
 
-If the player busts, he will lose his bet, even if the dealer also busts.
-If player has higher value cards than the dealer, the player wins.
-If dealer has higher value cards than the player, the dealer wins.
+Nếu người chơi bị “quắc” (vượt quá 21), họ thua cược, kể cả khi nhà cái cũng bị quắc
+Nếu người chơi có tổng điểm cao hơn nhà cái → người chơi thắng
+Nếu nhà cái có điểm cao hơn → nhà cái thắng
 
